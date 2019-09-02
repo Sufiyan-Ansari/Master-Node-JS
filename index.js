@@ -1,17 +1,16 @@
-const express = require('express');
+let request = require('request');
+let apiKey = '030dc4036d149e23bbd7bdf5d4422485';
+let city = 'karachi';
+let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 
-const app = express();
-
-app.set('views','views');
-
-app.set('view engine','ejs');
-
-app.use('/',(req,res,next)=>{
-    res.render('Student',
+request(url,(err,response,body)=>{
+    if(err)
     {
-        pageTitle:'Student'
-    }
-    );
-});
+        console.log('Error',err)
 
-app.listen(3000);
+    }
+    else
+    {
+        console.log('Body',body);
+    }
+});
