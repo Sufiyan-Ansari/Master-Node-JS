@@ -8,4 +8,6 @@ const WheatherController = require('../controller/WheatherController');
 
 Router.get('/',WheatherController.GetWheatherController);
 
+Router.post('/',WheatherController.PostWheatherController);
+
 module.exports = Router;
